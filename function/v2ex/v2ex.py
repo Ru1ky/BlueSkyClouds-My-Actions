@@ -93,11 +93,11 @@ class V2ex:
 
 
 if __name__ == "__main__":
-
-    rawjson=os.environ['V2EXCK']
+    sendNotify = sendNotify()
+    RAWJSON=os.environ['V2EXCK']
     SEND_KEY = os.environ['SEND_KEY']
-    datas = json.loads(rawjson)
+    datas = json.loads(RAWJSON)
     _check_item = datas.get("V2EX", [])[0]
     msg=V2ex(check_item=_check_item).main()
-    print(msg)
     sendNotify.send(title=u"v2ex auto sign in", msg=msg)
+    print(msg)
