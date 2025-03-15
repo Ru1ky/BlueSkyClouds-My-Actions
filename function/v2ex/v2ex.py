@@ -8,7 +8,21 @@ import urllib3
 sys.path.append("My-Actions/function/v2ex/")
 urllib3.disable_warnings()
 
-
+'''
+Secret example:
+{
+    "V2EX": [
+        {
+            "cookie": "PB3_SESSION=**************; V2EX_REFERRER=***********; V2EX_LANG=zhcn; A2=************",
+            "proxy": ""
+        },
+        {
+            "cookie": "",
+            "proxy": ""
+        }
+    ]
+}
+'''
 class V2ex:
     name = "V2EX 论坛"
 
