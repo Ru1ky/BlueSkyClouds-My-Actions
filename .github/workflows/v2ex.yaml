@@ -26,8 +26,7 @@ jobs:
             - name: "运行【V2ex自动签到】"
               run: python3 function/v2ex/v2ex.py
               env:
-                  BIKA_USER: ${{ secrets.BIKA_USER }}
-                  BIKA_PASS: ${{ secrets.BIKA_PASS }}
+                  V2EXCK: ${{ secrets.V2EXCK }}
                   SEND_KEY: ${{ secrets.SEND_KEY }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
                   BARK_PUSH: ${{ secrets.BARK_PUSH }}
