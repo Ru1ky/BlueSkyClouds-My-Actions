@@ -1,20 +1,15 @@
 import json
-import os
 import re
-import random
-import string
 import sys
+from sendNotify import *
 import requests
 import urllib3
 
 sys.path.append("My-Actions/function/v2ex/")
-from sendNotify import *
-
-
 urllib3.disable_warnings()
 
 
-class V2ex():
+class V2ex:
     name = "V2EX 论坛"
 
     def __init__(self, check_item):
@@ -98,8 +93,11 @@ class V2ex():
 
 
 if __name__ == "__main__":
-    datas = json.loads(os.environ['V2EXCK'])
+
+    rawjson=os.environ['V2EXCK']
+    SEND_KEY = os.environ['SEND_KEY']
+    datas = json.loads(rawjson)
     _check_item = datas.get("V2EX", [])[0]
-	
-	
-    print(V2ex(check_item=_check_item).main())
+    msg=V2ex(check_item=_check_item).main()
+    print(msg)
+    sendNotify.send(title=u"v2ex auto sign in", msg=msg)
