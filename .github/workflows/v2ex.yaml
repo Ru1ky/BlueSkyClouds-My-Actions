@@ -24,7 +24,7 @@ jobs:
               run: pip install -r ./requirements.txt
 
             - name: "运行【V2ex自动签到】"
-              run: python3 function/bika/bika.py
+              run: python3 function/v2ex/v2ex.py
               env:
                   BIKA_USER: ${{ secrets.BIKA_USER }}
                   BIKA_PASS: ${{ secrets.BIKA_PASS }}
