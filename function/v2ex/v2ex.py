@@ -10,12 +10,11 @@ import urllib3
 sys.path.append("My-Actions/function/v2ex/")
 from sendNotify import *
 
-from dailycheckin import CheckIn
 
 urllib3.disable_warnings()
 
 
-class V2ex(CheckIn):
+class V2ex():
     name = "V2EX 论坛"
 
     def __init__(self, check_item):
